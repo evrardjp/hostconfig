@@ -1,0 +1,7 @@
+[Unit]
+Description=ansible-pull service
+
+[Service]
+Type=oneshot
+ExecStart=ansible-pull -U https://github.com/evrardjp/hostconfig.git --clean --purge --sleep=30
+User=root

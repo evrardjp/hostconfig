@@ -1,0 +1,26 @@
+---
+- name: Prepare groups
+  hosts: localhost
+  connection: local
+  gather_facts: yes
+  tasks:
+    - name: Add groups based on first part of hostname (until '-' or '.' with no numbers)
+      group_by:
+        key: "{{ ansible_hostname.split('.')[0].split('-')[0] | regex_replace('[0-9]','') }}"
+    - name: Show current groups
+      debug:
+        msg: "{{ groups }}"
+
+- name: Run common configuration tasks
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  roles:
+    - common
+
+#- name: Run roles based on group appartenance
+#  hosts: workers:masters
+#  connection: local
+#  gather_facts: no
+#  roles:
+#    - server

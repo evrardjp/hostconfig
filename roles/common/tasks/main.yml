@@ -1,0 +1,21 @@
+---
+- name: Ensure SSH authorized_keys are up to date
+  authorized_key:
+    user: root
+    state: present
+    key: https://github.com/evrardjp.keys
+
+- name: Create an ansible-pull periodic run (service and timer)
+  copy:
+    src: "{{ item }}"
+    dest: "/etc/systemd/system/{{ item }}"
+   loop:
+     - ansible-pull.service
+     - ansible-pull.timer
+
+- name: Reload systemd to take those events
+  systemd:
+    daemon_reload: yes
+    name: ansible-pull.timer
+    state: started
+    enabled: yes
