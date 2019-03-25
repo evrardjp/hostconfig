@@ -1,10 +1,4 @@
 ---
-- name: Ensure SSH authorized_keys are up to date
-  authorized_key:
-    user: root
-    state: present
-    key: https://github.com/evrardjp.keys
-
 - name: Create an ansible-pull periodic run (service and timer)
   copy:
     src: "{{ item }}"

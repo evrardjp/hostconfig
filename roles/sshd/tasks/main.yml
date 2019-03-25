@@ -1,0 +1,34 @@
+---
+- name: Ensure SSH authorized_keys are up to date
+  authorized_key:
+    user: root
+    state: present
+    key: https://github.com/evrardjp.keys
+
+- name: Install sshd in case it's needed
+  package:
+    name: openssh
+    state: present
+
+- name: Ensure Password Auth is disabled by default
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    line: "PasswordAuthentication no"
+    regexp: '^PasswordAuthentication "
+    state: present
+
+- name: Ensure SSH can be done freely at home
+  blockinfile:
+    path: /etc/ssh/sshd_config
+    block: |
+      Match Address 192.168.102.0/24,!192.168.102.1
+        PermitRootLogin yes
+        PasswordAuthentication yes
+    validate: "sshd -t -f %s"
+
+- name: Ensure sshd can be socket activated
+  systemd:
+    daemon_reload: yes
+    name: sshd.socket
+    state: started
+    enabled: yes

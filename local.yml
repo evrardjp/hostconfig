@@ -16,7 +16,9 @@
   connection: local
   gather_facts: no
   roles:
-    - common
+    - ansible-pull
+    - sshd
+    - repos
 
 #- name: Run roles based on group appartenance
 #  hosts: workers:masters
