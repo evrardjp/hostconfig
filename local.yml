@@ -4,9 +4,13 @@
   connection: local
   gather_facts: yes
   tasks:
-    - name: Add groups based on first part of hostname (until '-' or '.' with no numbers)
+    - name: Prepare the future groups based on hostname (remove domain and numbers)
+      set_fact:
+        cleanhostname: "{{ ansible_hostname.split('.')[0] | regex_replace('[0-9]','') }}"
+    - name: Add groups based on hostname parts
       group_by:
-        key: "{{ ansible_hostname.split('.')[0].split('-')[0] | regex_replace('[0-9]','') }}"
+        key: "{{ item }}"
+      loop: "{{ cleanhostname.split('-') }}"
     - name: Show current groups
       debug:
         msg: "{{ groups }}"
@@ -16,13 +20,15 @@
   connection: local
   gather_facts: no
   roles:
-    - ansible-pull
-    - sshd
-    - repos
+    - ansible-pull   # Ensures this will run on a regular basis
+    - sshd           # Installs and configures SSHd
+    - repos          # Install personal AUR repos
+    - system-upgrade # Install personal AUR repos
+    - base-software  # Install minimum software/clients to get things done
 
-#- name: Run roles based on group appartenance
-#  hosts: workers:masters
-#  connection: local
-#  gather_facts: no
-#  roles:
-#    - server
+- name: Run roles based on group appartenance
+  hosts: workers:masters
+  connection: local
+  gather_facts: no
+  roles:
+    - poweroff-schedule # Ensures servers are stopped at the end of day.

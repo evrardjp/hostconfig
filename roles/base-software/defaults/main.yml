@@ -1,0 +1,55 @@
+---
+# Ansible is installed on host to run this tooling
+packages:
+  common:
+    - fish
+    - git
+    - iproute2
+    - lshw
+    - most
+    - pastebinit
+    - screen
+    - tmux
+  worker:
+    - docker
+    - openbsd-netcat
+  master:
+    - docker
+    - openbsd-netcat
+  pixel:
+    - browserpass
+    - docker
+    - hub
+    - ipython
+    - keybase-gui
+    - kubectl-bin
+    - light
+    - mosh
+    - mumble
+    - mxt-app-git
+    - network-manager-applet
+    - openbsd-netcat
+    - pamixer
+    - pass
+    - pasystray
+    - pavucontrol
+    - powerline
+    - powerline-fonts
+    - quassel-client-small
+    - samus-scripts
+    - spotify
+    - tldr
+  thinkpad:
+    - gnome
+  laptop:
+    - chromium
+    - code
+    - firefox
+    - imagemagick
+    - libreoffice-fresh
+    - python-jmespath
+    - python-netaddr
+    - python-virtualenv
+    - signal-desktop-bin
+    - termite
+    - vim

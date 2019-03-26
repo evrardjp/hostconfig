@@ -1,0 +1,6 @@
+---
+- name: Install packages
+  package:
+    name: "{{ packages[item] | default([]) }}"
+    state: present
+  loop: "['common'] + {{ group_names }}"

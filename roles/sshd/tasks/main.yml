@@ -14,7 +14,7 @@
   lineinfile:
     path: /etc/ssh/sshd_config
     line: "PasswordAuthentication no"
-    regexp: '^PasswordAuthentication "
+    regexp: "^PasswordAuthentication"
     state: present
 
 - name: Ensure SSH can be done freely at home

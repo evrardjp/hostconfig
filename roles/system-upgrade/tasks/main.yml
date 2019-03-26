@@ -1,0 +1,5 @@
+---
+- name: Refresh repositories and upgrade packages
+  pacman:
+    update_cache: yes
+    upgrade: yes

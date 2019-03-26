@@ -1,0 +1,14 @@
+---
+- name: Copy poweroff service and timer
+  copy:
+    src: "{{ item }}"
+    dest: "/etc/systemd/system/{{ item }}"
+  loop:
+    - poweroff-schedule.timer
+    - poweroff-schedule.service
+
+- name: Enable service
+  systemd:
+    daemon_reload: yes
+    name: poweroff-schedule.timer
+    state: enabled

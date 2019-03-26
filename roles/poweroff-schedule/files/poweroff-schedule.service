@@ -1,0 +1,6 @@
+[Unit]
+Description = Poweroff at timer
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/poweroff

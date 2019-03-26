@@ -3,9 +3,9 @@
   copy:
     src: "{{ item }}"
     dest: "/etc/systemd/system/{{ item }}"
-   loop:
-     - ansible-pull.service
-     - ansible-pull.timer
+  loop:
+    - ansible-pull.service
+    - ansible-pull.timer
 
 - name: Reload systemd to take those events
   systemd:
