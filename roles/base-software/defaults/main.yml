@@ -10,10 +10,7 @@ packages:
     - pastebinit
     - screen
     - tmux
-  worker:
-    - docker
-    - openbsd-netcat
-  master:
+  k8s:
     - docker
     - openbsd-netcat
   pixel:
