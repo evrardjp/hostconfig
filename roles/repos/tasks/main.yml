@@ -3,16 +3,14 @@
   blockinfile:
     path: /etc/pacman.conf
     block: |
-      [aur-{{ item.name }}]
+      [aurci_{{ item.name }}]
       SigLevel = Optional TrustAll
       Server = https://github.com/evrardjp/aurci/releases/download/{{ item.name }}
+  when: "item.when | bool"
   loop:
     - name: desktop
-      when:
-        - "'laptop' in group_names"
+      when: "'laptop' in group_names"
     - name: samus
-      when:
-        -  "ansible_hostname == 'laptop-chromebook'"
+      when: "ansible_hostname == 'laptop-chromebook'"
     - name: k8s
-      when:
-        -  "'master' in group_names or 'worker' in group_names"
+      when: "'k8s' in group_names"
