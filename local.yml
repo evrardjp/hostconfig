@@ -27,7 +27,7 @@
     - base-software  # Install minimum software/clients to get things done
 
 - name: Run roles based on group appartenance
-  hosts: workers:masters
+  hosts: k8s:worker:master
   connection: local
   gather_facts: no
   roles:
