@@ -6,7 +6,7 @@
   tasks:
     - name: Prepare the future groups based on hostname (remove domain and numbers)
       set_fact:
-        cleanhostname: "{{ ansible_hostname.split('.')[0] | regex_replace('[0-9]','') }}"
+        cleanhostname: "{{ ansible_hostname.split('.')[0] | regex_replace('[0-9]*$','') }}"
     - name: Add groups based on hostname parts
       group_by:
         key: "{{ item }}"
