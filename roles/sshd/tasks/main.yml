@@ -9,6 +9,14 @@
   package:
     name: openssh
     state: present
+  register: _sshd_install
+
+- name: Generate sshd host keys by running it at least once
+  systemd:
+    daemon_reload: yes
+    name: sshd.service
+    state: started
+  when: _sshd_install is changed
 
 - name: Ensure Password Auth is disabled by default
   lineinfile:
@@ -26,9 +34,15 @@
         PasswordAuthentication yes
     validate: "sshd -t -f %s"
 
-- name: Ensure sshd can be socket activated
+- name: Ensure sshd service is not started (to enable socket activation)
   systemd:
     daemon_reload: yes
+    name: sshd.service
+    state: stopped
+    enabled: no
+
+- name: Ensure sshd can be socket activated
+  systemd:
     name: sshd.socket
     state: started
     enabled: yes
