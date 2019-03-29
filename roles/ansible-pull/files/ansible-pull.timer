@@ -2,7 +2,7 @@
 Description=Run ansible-pull everyday and on boot
 
 [Timer]
-OnCalendar=*-*-* 12:00:00
+OnCalendar=*-*-* *:00:00
 Persistent=true
 
 
