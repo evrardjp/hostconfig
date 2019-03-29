@@ -12,3 +12,4 @@
     daemon_reload: yes
     name: poweroff-schedule.timer
     enabled: yes
+    state: started
