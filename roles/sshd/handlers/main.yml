@@ -1,0 +1,21 @@
+---
+- name: ssh first start
+  systemd:
+    daemon_reload: yes
+    name: sshd.service
+    state: started
+
+- name: ssh restart
+  systemd:
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
+    enabled: "{{ item.enabled }}"
+  loop:
+    # Disable sshd service to enable socket activated ssh
+    - name: sshd.service
+      state: stopped
+      enabled: no
+    # Socket activated ssh
+    - name: sshd.socket
+      state: started
+      enabled: yes
