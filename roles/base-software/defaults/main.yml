@@ -13,6 +13,18 @@ packages:
   k8s:
     - docker
     - openbsd-netcat
+  laptop:
+    - chromium
+    - code
+    - firefox
+    - imagemagick
+    - libreoffice-fresh
+    - python-jmespath
+    - python-netaddr
+    - python-virtualenv
+    - signal-desktop-bin
+    - termite
+    - vim
   pixel:
     - browserpass
     - docker
@@ -36,17 +48,7 @@ packages:
     - samus-scripts
     - spotify
     - tldr
+  server:
+    - openbsd-netcat
   thinkpad:
     - gnome
-  laptop:
-    - chromium
-    - code
-    - firefox
-    - imagemagick
-    - libreoffice-fresh
-    - python-jmespath
-    - python-netaddr
-    - python-virtualenv
-    - signal-desktop-bin
-    - termite
-    - vim
