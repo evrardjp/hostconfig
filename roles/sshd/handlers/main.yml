@@ -1,10 +1,4 @@
 ---
-- name: ssh first start
-  systemd:
-    daemon_reload: yes
-    name: sshd.service
-    state: started
-
 - name: ssh restart
   systemd:
     name: "{{ item.name }}"

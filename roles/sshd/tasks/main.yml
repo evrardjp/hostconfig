@@ -10,8 +10,13 @@
     name: openssh
     state: present
   register: _sshd_install
-  notify:
-    - ssh first start
+
+- name: Start ssh at least once
+  systemd:
+    daemon_reload: yes
+    name: sshd.service
+    state: started
+  when: _sshd_install is changed
 
 - name: Ensure Password Auth is disabled by default
   lineinfile:
