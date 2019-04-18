@@ -50,7 +50,6 @@ packages:
   dell:
     - browserpass
     - docker
-    - gnome
     - hub
     - ipython
     - keybase-gui
@@ -61,7 +60,6 @@ packages:
     - powerline
     - powerline-fonts
     - quassel-client-small
-    - spotify
     - tldr
   server:
     - openbsd-netcat
