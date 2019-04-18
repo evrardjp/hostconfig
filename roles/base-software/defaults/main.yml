@@ -31,7 +31,6 @@ packages:
     - hub
     - ipython
     - keybase-gui
-    - kubectl-bin
     - light
     - mosh
     - mumble
@@ -46,6 +45,22 @@ packages:
     - powerline-fonts
     - quassel-client-small
     - samus-scripts
+    - spotify
+    - tldr
+  dell:
+    - browserpass
+    - docker
+    - gnome
+    - hub
+    - ipython
+    - keybase-gui
+    - mosh
+    - mumble
+    - openbsd-netcat
+    - pass
+    - powerline
+    - powerline-fonts
+    - quassel-client-small
     - spotify
     - tldr
   server:

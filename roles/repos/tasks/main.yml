@@ -11,6 +11,6 @@
     - name: desktop
       when: "'laptop' in group_names"
     - name: samus
-      when: "ansible_hostname == 'laptop-chromebook'"
+      when: "ansible_hostname == 'laptop-pixel'"
     - name: k8s
       when: "'k8s' in group_names"
