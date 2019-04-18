@@ -9,14 +9,19 @@
   package:
     name: openssh
     state: present
-  register: _sshd_install
+
+- name: Check if host keys exists
+  find:
+    path: /etc/ssh
+    patterns: "*key"
+  register: _hostkeys
 
 - name: Start ssh at least once
   systemd:
     daemon_reload: yes
     name: sshd.service
     state: started
-  when: _sshd_install is changed
+  when: _hostkeys.files | length == 0
 
 - name: Ensure Password Auth is disabled by default
   lineinfile:
