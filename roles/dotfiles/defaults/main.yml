@@ -1,0 +1,7 @@
+---
+vim_powerline: "{% if 'thinkpad' in group_names %} False {% else %} True {% endif %}"
+tmux_powerline: "{{ vim_powerline }}"
+termite: "{{ vim_powerline }}"
+
+tmux_powerline_path: ".config/powerline/themes/tmux/default.json"
+termite_path: ".config/termite/config"

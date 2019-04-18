@@ -1,4 +1,32 @@
 ---
-- name: Show facts
-  debug:
-    msg: "{{ ansible_facts }}"
+- name: Template files
+  template:
+    src: "{{ item }}"
+    dest: "{{ ansible_user_dir }}/{{ item }}"
+  loop:
+    - .vimrc
+    - .tmux.conf
+
+- name: Create config folders
+  file:
+    state: directory
+    path: "{{ ansible_user_dir }}/{{ item.path | dirname }}"
+  when: item.when
+  loop:
+    - path: "{{ tmux_powerline_path }}"
+      when: tmux_powerline | bool
+    - path: "{{ termite_path }}"
+      when: termite | bool
+
+- name: Copy what doesn't need templating
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  when: item.when
+  loop:
+    - src: termite
+      dest: "{{ ansible_user_dir }}/{{ termite_path }}"
+      when: termite | bool
+    - src: tmux-default.json
+      dest: "{{ ansible_user_dir }}/{{ tmux_powerline_path }}"
+      when: tmux_powerline | bool
