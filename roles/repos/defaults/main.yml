@@ -1,0 +1,5 @@
+# Matching aurci repos to groupnames
+repos:
+  laptop: "desktop"
+  pixel: "samus"
+  k8s: "k8s"

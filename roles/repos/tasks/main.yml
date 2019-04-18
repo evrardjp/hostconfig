@@ -1,16 +1,12 @@
 ---
-- name: Add desktop repos
+- name: Add repos
   blockinfile:
     path: /etc/pacman.conf
     block: |
-      [aurci_{{ item.name }}]
+      [aurci_{{ repos[item] }}]
       SigLevel = Optional TrustAll
-      Server = https://github.com/evrardjp/aurci/releases/download/{{ item.name }}
-  when: "item.when | bool"
-  loop:
-    - name: desktop
-      when: "'laptop' in group_names"
-    - name: samus
-      when: "ansible_hostname == 'laptop-pixel'"
-    - name: k8s
-      when: "'k8s' in group_names"
+      Server = https://github.com/evrardjp/aurci/releases/download/{{ repos[item] }}
+  # Change loop when more than a repo will be required per group.
+  loop: "{{ group_names }}"
+  when:
+    - "item in repos"
