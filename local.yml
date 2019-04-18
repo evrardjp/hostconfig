@@ -32,3 +32,10 @@
   gather_facts: no
   roles:
     - poweroff-schedule # Ensures servers are stopped at the end of day.
+
+- name: Configure users
+  hosts: laptop
+  connection: local
+  gather_facts: no
+  roles:
+    - users # Ensures the local users are defined
