@@ -27,6 +27,7 @@ packages:
     - vim
   pixel:
     - browserpass
+    - browserpass-chromium
     - docker
     - hub
     - ipython
@@ -49,6 +50,7 @@ packages:
     - tldr
   dell:
     - browserpass
+    - browserpass-chromium
     - docker
     - hub
     - ipython
