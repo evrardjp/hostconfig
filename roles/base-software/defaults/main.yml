@@ -33,6 +33,7 @@ packages:
     - ipython
     - keybase-gui
     - libu2f-host
+    - libusb-compat
     - light
     - mosh
     - mumble
@@ -57,6 +58,7 @@ packages:
     - ipython
     - keybase-gui
     - libu2f-host
+    - libusb-compat
     - mosh
     - mumble
     - openbsd-netcat
@@ -70,3 +72,4 @@ packages:
   thinkpad:
     - gnome
     - libu2f-host
+    - libusb-compat
