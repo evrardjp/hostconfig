@@ -66,6 +66,7 @@ packages:
     - powerline
     - powerline-fonts
     - quassel-client-small
+    - seahorse
     - tldr
   server:
     - openbsd-netcat
@@ -73,3 +74,4 @@ packages:
     - gnome
     - libu2f-host
     - libusb-compat
+    - seahorse
