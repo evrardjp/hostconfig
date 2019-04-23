@@ -62,6 +62,7 @@ packages:
     - mosh
     - mumble
     - openbsd-netcat
+    - openvpn
     - pass
     - powerline
     - powerline-fonts
