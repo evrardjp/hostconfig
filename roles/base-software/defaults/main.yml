@@ -36,7 +36,6 @@ packages:
     - libusb-compat
     - light
     - mosh
-    - mumble
     - mxt-app-git
     - network-manager-applet
     - openbsd-netcat
