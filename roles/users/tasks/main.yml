@@ -18,3 +18,9 @@
     append: yes
     groups:
       - wheel
+
+- name: Ensure SSH authorized_keys are up to date
+  authorized_key:
+    user: jean-philippe
+    state: present
+    key: https://github.com/evrardjp.keys
