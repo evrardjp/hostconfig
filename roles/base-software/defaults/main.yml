@@ -59,7 +59,6 @@ packages:
     - libu2f-host
     - libusb-compat
     - mosh
-    - mumble
     - openbsd-netcat
     - openvpn
     - pass
