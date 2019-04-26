@@ -8,6 +8,13 @@ packages:
     - lshw
     - most
     - pastebinit
+    - python-dnspython
+    - python-jmespath
+    - python-netaddr
+    - python-passlib
+    - python-pyopenssl
+    - python-systemd
+    - ripgrep
     - screen
     - tmux
   k8s:
@@ -15,26 +22,29 @@ packages:
     - openbsd-netcat
   laptop:
     - chromium
-    - code
     - firefox
     - imagemagick
     - libreoffice-fresh
-    - python-jmespath
-    - python-netaddr
     - python-virtualenv
     - signal-desktop-bin
-    - termite
     - vim
   pixel:
+    - acpid
+    - arandr
     - browserpass
     - browserpass-chromium
+    - code
+    - compton
     - docker
+    - git-repo
+    - git-review
     - hub
     - ipython
     - keybase-gui
     - libu2f-host
     - libusb-compat
     - light
+    - lxappearance
     - mosh
     - mxt-app-git
     - network-manager-applet
@@ -44,15 +54,32 @@ packages:
     - pasystray
     - pavucontrol
     - powerline
+    - python-black
+    - python-cryptography
+    - python-openstackclient
+    - python-pygit2
+    - python-tox
+    - powerline-vim
     - powerline-fonts
     - quassel-client-small
+    - rofi
     - samus-scripts
+    - scrot
+    - shellcheck
     - spotify
+    - termite
     - tldr
   dell:
+    - arc-gtk-theme
+    - arc-icon-theme
     - browserpass
     - browserpass-chromium
+    - code
     - docker
+    - git-repo
+    - git-review
+    - gnome-themes-extra
+    - gtk-engine-murrine
     - hub
     - ipython
     - keybase-gui
@@ -64,8 +91,14 @@ packages:
     - pass
     - powerline
     - powerline-fonts
+    - python-black
+    - python-cryptography
+    - python-openstackclient
+    - python-pygit2
+    - python-tox
     - quassel-client-small
     - seahorse
+    - shellcheck
     - tldr
   server:
     - openbsd-netcat
