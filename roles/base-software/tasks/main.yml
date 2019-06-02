@@ -9,6 +9,10 @@
       {% endfor %}
       {{ packagelist }}
 
+- name: Show list of packages to install
+  debug:
+    var: _pkglist
+
 - name: Install packages
   package:
     name: "{{ _pkglist }}"
