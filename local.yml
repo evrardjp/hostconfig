@@ -1,20 +1,6 @@
 ---
-- name: Prepare groups
-  hosts: localhost
-  connection: local
-  gather_facts: yes
-  tasks:
-    - name: Prepare the future groups based on hostname (remove domain and numbers)
-      set_fact:
-        cleanhostname: "{{ ansible_hostname.split('.')[0] | regex_replace('[0-9]*$','') }}"
-    - name: Add groups based on hostname parts
-      group_by:
-        key: "{{ item }}"
-      loop: "{{ cleanhostname.split('-') }}"
-    - name: Show current groups
-      debug:
-        msg: "{{ groups }}"
 - import_playbook: enroll.yml
+- import_playbook: in-memory-inventory.yml
 
 - name: Run common configuration tasks
   hosts: localhost

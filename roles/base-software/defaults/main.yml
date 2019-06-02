@@ -1,11 +1,15 @@
 ---
-# Ansible is installed on host to run this tooling
+# Note: Ansible is installed on host before running this tooling, so
+# no need to reinstall, as upgrades are already handled.
+# These are "package themes", which can be added as variable on your
+# host if you want to subscribe to those packages
 packages:
   common:
     - fish
     - git
     - iproute2
     - lshw
+    - mosh
     - most
     - pastebinit
     - python-dnspython
@@ -17,10 +21,7 @@ packages:
     - ripgrep
     - screen
     - tmux
-  k8s:
-    - docker
-    - openbsd-netcat
-  laptop:
+  desktop:
     - chromium
     - firefox
     - imagemagick
@@ -28,82 +29,60 @@ packages:
     - python-virtualenv
     - signal-desktop-bin
     - vim
-  pixel:
-    - acpid
-    - arandr
-    - browserpass
-    - browserpass-chromium
+  dev:
     - code
-    - compton
     - docker
     - git-repo
     - git-review
     - hub
     - ipython
-    - keybase-gui
-    - libu2f-host
-    - libusb-compat
+    - python-black
+    - python-cryptography
+    - python-openstackclient
+    - python-pygit2
+    - python-tox
+    - quassel-client-small
+    - shellcheck
+    - termite
+    - tldr
+  gnome:
+    - gnome
+    - arc-gtk-theme
+    - arc-icon-theme
+    - gnome-themes-extra
+    - gtk-engine-murrine
+    - seahorse
+  k8s:
+    - docker
+    - k3s
+  network:
+    - openbsd-netcat
+  nognome:
+    - acpid
+    - arandr
+    - compton
     - light
     - lxappearance
-    - mosh
-    - mxt-app-git
     - network-manager-applet
-    - openbsd-netcat
     - pamixer
-    - pass
     - pasystray
     - pavucontrol
     - powerline
-    - python-black
-    - python-cryptography
-    - python-openstackclient
-    - python-pygit2
-    - python-tox
     - powerline-vim
     - powerline-fonts
-    - quassel-client-small
     - rofi
-    - samus-scripts
     - scrot
-    - shellcheck
-    - spotify
-    - termite
-    - tldr
-  dell:
-    - arc-gtk-theme
-    - arc-icon-theme
+  pass:
     - browserpass
     - browserpass-chromium
-    - code
-    - docker
-    - git-repo
-    - git-review
-    - gnome-themes-extra
-    - gtk-engine-murrine
-    - hub
-    - ipython
     - keybase-gui
     - libu2f-host
     - libusb-compat
-    - mosh
-    - openbsd-netcat
-    - openvpn
     - pass
-    - powerline
-    - powerline-fonts
-    - python-black
-    - python-cryptography
-    - python-openstackclient
-    - python-pygit2
-    - python-tox
-    - quassel-client-small
-    - seahorse
-    - shellcheck
-    - tldr
-  server:
-    - openbsd-netcat
-  thinkpad:
-    - gnome
-    - libu2f-host
-    - libusb-compat
-    - seahorse
+  pixel:
+    - mxt-app-git
+    - samus-scripts
+  spotify:
+    - spotify
+  openvpn:
+    - openvpn

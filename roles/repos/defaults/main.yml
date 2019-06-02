@@ -1,5 +1,10 @@
-# Matching aurci repos to groupnames
-repos:
-  laptop: "desktop"
-  pixel: "samus"
-  k8s: "k8s"
+repodetails:
+  laptop:
+    reponame: aurci_desktop
+    repolocation: https://github.com/evrardjp/aurci/releases/download/desktop
+  pixel:
+    reponame: aurci_samus
+    repolocation: https://github.com/evrardjp/aurci/releases/download/samus
+  k8s:
+    reponame: aurci_k8s
+    repolocation: https://github.com/evrardjp/aurci/releases/download/k8s

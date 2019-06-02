@@ -3,10 +3,7 @@
   blockinfile:
     path: /etc/pacman.conf
     block: |
-      [aurci_{{ repos[item] }}]
+      [{{ repodetails[item]['reponame'] }}]
       SigLevel = Optional TrustAll
-      Server = https://github.com/evrardjp/aurci/releases/download/{{ repos[item] }}
-  # Change loop when more than a repo will be required per group.
-  loop: "{{ group_names }}"
-  when:
-    - "item in repos"
+      Server = {{ repodetails[item]['repolocation'] }}
+  loop: "{{ repos | default([]) }}"

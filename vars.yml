@@ -1,0 +1,54 @@
+---
+# This maps hostname to groups because I don't want to deal with inventories
+# when calling this repo using ansible-pull.
+
+inventoryhosts:
+  k8s-generic:
+    groups: &k8sgroups
+      - k8s
+      - servers
+    repos: &k8srepos
+      - k8s
+    pkggroups: &k8spkgs
+      - k8s
+  k8s-worker01: &k8sworker
+    groups:
+      - *k8sgroups
+      - k8s_workers
+    repos: *k8srepos
+    pkggroups: *k8spkgs
+  k8s-worker02: *k8sworker
+  k8s-master01:
+    groups:
+      - *k8sgroups
+      - k8s_masters
+    repos: *k8srepos
+    pkggroups: *k8spkgs
+  laptop-generic:
+    groups: &laptopgroups
+      - laptops
+    repos: &laptoprepos
+      - desktop
+  laptop-samus:
+    groups: *laptopgroups
+    repos:
+      - *laptoprepos
+      - samus
+    pkggroups:
+      - desktop
+      - dev
+      - network
+      - nognome
+      - pass
+      - pixel
+  laptop-dell:
+    groups: *laptopgroups
+    repos: *laptoprepos
+    pkggroups:
+      - desktop
+      - dev
+      - gnome
+      - network
+      - pass
+      - spotify
+      - openvpn

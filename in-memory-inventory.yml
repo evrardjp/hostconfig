@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  gather_facts: yes
+  connection: local
+  tasks:
+    - name: Get inventory variables
+      include_vars: vars.yml
+
+    - name: Add hosts
+      add_host:
+        name: "{{ item.key }}"
+        groups: "{{ item.value['groups'] | flatten }}"
+        repos: "{{ item.value['repos'] | flatten }}"
+        package_groups: "{{ item.value['pkggroups'] | flatten }}"
+      loop: "{{ inventoryhosts | dict2items }}"
+      when: item.key == ansible_hostname
