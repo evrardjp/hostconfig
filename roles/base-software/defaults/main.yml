@@ -83,6 +83,6 @@ packages:
     - mxt-app-git
     - samus-scripts
   spotify:
-    - spotify
+    - spotify-dev
   openvpn:
     - openvpn
