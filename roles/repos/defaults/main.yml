@@ -1,5 +1,6 @@
+---
 repodetails:
-  laptop:
+  desktop:
     reponame: aurci_desktop
     repolocation: https://github.com/evrardjp/aurci/releases/download/desktop
   pixel:
