@@ -14,14 +14,13 @@
     - name: Show current groups
       debug:
         msg: "{{ groups }}"
+- import_playbook: enroll.yml
 
 - name: Run common configuration tasks
   hosts: localhost
   connection: local
   gather_facts: no
   roles:
-    - ansible-pull   # Ensures this will run on a regular basis
-    - sshd           # Installs and configures SSHd
     - repos          # Install personal AUR repos
     - system-upgrade # Install personal AUR repos
     - base-software  # Install minimum software/clients to get things done

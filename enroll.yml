@@ -1,0 +1,8 @@
+---
+- name: Ensure access to the node and its auto-reconfiguration
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  roles:
+    - ansible-pull   # Ensures this will run on a regular basis
+    - sshd           # Installs and configures SSHd
