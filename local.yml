@@ -11,12 +11,12 @@
     - system-upgrade # Install personal AUR repos
     - base-software  # Install minimum software/clients to get things done
 
-- name: Run roles based on group appartenance
-  hosts: k8s:worker:master:server
+- name: Poweroff servers during the night for energy saving
+  hosts: servers
   connection: local
   gather_facts: no
   roles:
-    - poweroff-schedule # Ensures servers are stopped at the end of day.
+    - poweroff-schedule
 
 - name: Configure users
   hosts: laptop
