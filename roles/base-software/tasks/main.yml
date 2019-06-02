@@ -1,8 +1,14 @@
 ---
-- name: Install packages per group
+- name: Define package list
+  set_fact:
+    _pkglist: |-
+      {% set packagelist = [] %}
+      {% for pkggroup in pkggroups %}
+      {%   set _ = packagelist.append(packages[pkggroup]) %}
+      {% endfor %}
+      {{ packagelist }}
+
+- name: Install packages
   package:
-    name: "{{ packages[item] }}"
+    name: "{{ _pkglist }}"
     state: present
-  loop: "['common'] + {{ group_names }}"
-  when:
-    - "item in packages"
