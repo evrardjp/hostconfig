@@ -1,5 +1,5 @@
 ---
-# package_groups is like a "host var" from vars.yml.
+# package_groups is like a "host var" from vars.yml/in-memory-inventory.
 - name: Define package list
   set_fact:
     _pkglist: |-

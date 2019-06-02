@@ -2,8 +2,10 @@
 - import_playbook: enroll.yml
 - import_playbook: in-memory-inventory.yml
 
+# Inventory should contain `ansible_inventory` and `localhost`.
+# Only run this for `ansible_inventory`.
 - name: Run common configuration tasks
-  hosts: localhost
+  hosts: all:!localhost
   connection: local
   gather_facts: no
   roles:
