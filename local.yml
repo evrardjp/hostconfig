@@ -18,8 +18,8 @@
   roles:
     - poweroff-schedule
 
-- name: Configure users
-  hosts: laptop
+- name: Configure dev user
+  hosts: laptops
   connection: local
   gather_facts: no
   roles:
