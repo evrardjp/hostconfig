@@ -25,11 +25,12 @@
   roles:
     - users # Ensures the local users are defined
 
-- name: Configure dotfiles for user jean-philippe
-  hosts: laptop
-  gather_facts: yes
-  become: true
-  become_method: su
-  become_user: jean-philippe
-  roles:
-    - dotfiles
+# TODO: Refactor dotfiles to simply copy from/to known locations.
+#- name: Configure dotfiles for user jean-philippe
+#  hosts: laptops
+#  gather_facts: yes
+#  become: true
+#  become_method: su
+#  become_user: jean-philippe
+#  roles:
+#    - dotfiles
