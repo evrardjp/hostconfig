@@ -5,7 +5,7 @@
     _pkglist: |-
       {% set packagelist = [] %}
       {% for pkggroup in package_groups %}
-      {%   set _ = packagelist.append(packages[pkggroup]) %}
+      {%   set _ = packagelist.extend(packages[pkggroup]) %}
       {% endfor %}
       {{ packagelist }}
 
