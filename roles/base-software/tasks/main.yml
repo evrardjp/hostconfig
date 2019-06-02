@@ -1,9 +1,10 @@
 ---
+# package_groups is like a "host var" from vars.yml.
 - name: Define package list
   set_fact:
     _pkglist: |-
       {% set packagelist = [] %}
-      {% for pkggroup in pkggroups %}
+      {% for pkggroup in package_groups %}
       {%   set _ = packagelist.append(packages[pkggroup]) %}
       {% endfor %}
       {{ packagelist }}
