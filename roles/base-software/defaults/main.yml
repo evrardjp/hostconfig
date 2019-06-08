@@ -55,6 +55,8 @@ packages:
   k8s:
     - docker
     - k3s
+    - conntrack-tools
+    - nftables
   network:
     - openbsd-netcat
   nognome:
