@@ -54,9 +54,9 @@ packages:
     - seahorse
   k8s:
     - docker
-    - k3s
     - conntrack-tools
     - nftables
+    - open-iscsi
   network:
     - openbsd-netcat
   nognome:
