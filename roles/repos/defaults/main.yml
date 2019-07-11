@@ -3,7 +3,7 @@ repodetails:
   desktop:
     reponame: aurci_desktop
     repolocation: https://github.com/evrardjp/aurci/releases/download/desktop
-  pixel:
+  samus:
     reponame: aurci_samus
     repolocation: https://github.com/evrardjp/aurci/releases/download/samus
   k8s:
