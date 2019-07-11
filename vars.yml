@@ -38,7 +38,7 @@ inventoryhosts:
       - desktop
       - dev
       - network
-      - nognome
+      #- nognome
       - pass
       - pixel
   laptop-dell:
