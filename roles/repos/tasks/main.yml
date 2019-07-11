@@ -2,6 +2,7 @@
 - name: Add repos
   blockinfile:
     path: /etc/pacman.conf
+    marker: "# ANSIBLE MANAGED {{ repodetails[item]['reponame'] }}"
     block: |
       [{{ repodetails[item]['reponame'] }}]
       SigLevel = Optional TrustAll
