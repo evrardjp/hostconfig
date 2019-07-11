@@ -32,9 +32,7 @@ packages:
   dev:
     - code
     - docker
-    - git-repo
     - git-review
-    - hub
     - ipython
     - python-black
     - python-cryptography
@@ -43,7 +41,6 @@ packages:
     - python-tox
     - quassel-client-small
     - shellcheck
-    - termite
     - tldr
   gnome:
     - gnome
