@@ -31,9 +31,11 @@ packages:
     - vim
   dev:
     - code
-    - docker
+    - buildah
     - git-review
     - ipython
+    - podman
+    - podman-docker
     - python-black
     - python-cryptography
     - python-openstackclient
