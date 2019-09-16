@@ -43,7 +43,9 @@ inventoryhosts:
       - pixel
   laptop-dell:
     groups: *laptopgroups
-    repos: *laptoprepos
+    repos:
+      - *laptoprepos
+      - k8s
     pkggroups:
       - desktop
       - dev
