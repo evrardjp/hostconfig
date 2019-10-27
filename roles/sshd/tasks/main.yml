@@ -36,7 +36,7 @@
   blockinfile:
     path: /etc/ssh/sshd_config
     block: |
-      Match Address 192.168.102.0/24,!192.168.102.1
+      Match Address 192.168.102.0/24
         PermitRootLogin yes
         PasswordAuthentication yes
     validate: "sshd -t -f %s"
